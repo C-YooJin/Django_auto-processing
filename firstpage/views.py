@@ -1,6 +1,8 @@
 from django.http import HttpResponse
-
+from django.shortcuts import render
+from .models import firstpage
 
 def first_page(request):
-    return HttpResponse('이곳은 첫 번째 페이지! 왼쪽에 메뉴 바 만들어야됨')
+    firstpages = firstpage.objects.all()
+    return render(request, 'firstpage/index_real.html')
 # Create your views here.

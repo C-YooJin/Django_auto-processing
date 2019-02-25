@@ -10,7 +10,7 @@ Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
 Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
+    1. Import thre include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 
  URL 매핑은 path() 함수 list 변수인 urlpatterns 을 통해 관리됩니다.
@@ -29,11 +29,5 @@ urlpatterns = [
     path('', include('firstpage.urls')),
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('crawler/', include('crawler.urls')),
 ]
-
-"""
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('blog.urls'))
-]
-"""
