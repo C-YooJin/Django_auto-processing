@@ -25,7 +25,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index_real.html" class="logo"><strong>Editorial</strong> by Data & Connection</a>
+									<a href="{% url 'first_page' %}" class="logo"><strong>Editorial</strong> by Data & Connection</a>
 									<ul class="icons">
 										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -40,7 +40,7 @@
 									<div class="content">
 										<header>
 											<h1>Hi, This is CDP</h1>
-											<p><strong>Clova Data auto-Processing! </strong>We support data preprocessing, data format trans, decoding, and so on. </p>
+											<p><strong>Clova Data auto-Processing! </strong>We support data crawler, data format trans, decoding, and so on. </p>
 										</header>
 										<p>DATA PREPROCESSING is an important step in the data mining process. If there is much irrelevant and redundant information present or noisy and unreliable data, then knowledge discovery during the training phase is more difficult. Data preparation and filtering steps can take considerable amount of processing time. Data preprocessing includes cleaning, Instance selection, normalization, transformation, feature extraction and selection, etc. The product of data preprocessing is the final training set.</p>
 
@@ -169,7 +169,7 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="~/firstpage/templates/firstpage/index_real.html">Homepage</a></li>
+										<li><a href="{% url 'first_page' %}">Homepage</a></li>
 										<!-- 필요없음
 										<li><a href="generic.html">Generic</a></li>
 										<li><a href="elements.html">Elements</a></li>
@@ -177,7 +177,7 @@
 										<li>
 											<span class="opener">Image Crawler</span>
 											<ul>
-												<li><a href="#">Google</a></li>
+												<li><a href="{% url 'crawler' %}">Google</a></li>
 												<li><a href="#">Flickr</a></li>
 												<li><a href="#">Instagram</a></li>
 											</ul>
