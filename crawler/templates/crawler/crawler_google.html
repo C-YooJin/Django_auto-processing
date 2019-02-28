@@ -40,6 +40,71 @@
 										<h1>You can crawl Google Image Data!</h1>
 									</header>
 
+									<h3>Form</h3>
+
+													<form method="post" action="#">
+														<div class="row gtr-uniform">
+															<div class="col-6 col-12-xsmall">
+																<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+															</div>
+															<div class="col-6 col-12-xsmall">
+																<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+															</div>
+															<!-- Break -->
+															<div class="col-12">
+																<select name="demo-category" id="demo-category">
+																	<option value="">- TEAM NAME -</option>
+																	<option value="1">NSML</option>
+																	<option value="1">AI Production</option>
+																	<option value="1">AI Research</option>
+																	<option value="1">Biz AI</option>
+																	<option value="1">OCR</option>
+																	<option value="1">Speech</option>
+																	<option value="1">Voice</option>
+																	<option value="1">Video</option>
+																	<option value="1">Vision</option>
+																	<option value="1">Data&Connection</option>
+																	<option value="1">NSML Competition TF</option>
+																	<option value="1">DUET TF</option>
+																	<option value="1">Pasha TF</option>
+																</select>
+															</div>
+															<!-- Break -->
+															<div class="col-4 col-12-small">
+																<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+																<label for="demo-priority-low">Low</label>
+															</div>
+															<div class="col-4 col-12-small">
+																<input type="radio" id="demo-priority-normal" name="demo-priority">
+																<label for="demo-priority-normal">Normal</label>
+															</div>
+															<div class="col-4 col-12-small">
+																<input type="radio" id="demo-priority-high" name="demo-priority">
+																<label for="demo-priority-high">High</label>
+															</div>
+															<!-- Break -->
+															<div class="col-6 col-12-small">
+																<input type="checkbox" id="demo-copy" name="demo-copy">
+																<label for="demo-copy">Email me a copy</label>
+															</div>
+															<div class="col-6 col-12-small">
+																<input type="checkbox" id="demo-human" name="demo-human" checked>
+																<label for="demo-human">I am a human</label>
+															</div>
+															<!-- Break -->
+															<div class="col-12">
+																<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+															</div>
+															<!-- Break -->
+															<div class="col-12">
+																<ul class="actions">
+																	<li><input type="submit" value="Send Message" class="primary" /></li>
+																	<li><input type="reset" value="Reset" /></li>
+																</ul>
+															</div>
+														</div>
+													</form>
+
 									<!-- Content -->
 										<h2 id="content">Sample Content</h2>
 										<p>Praesent ac adipiscing ullamcorper semper ut amet ac risus. Lorem sapien ut odio odio nunc. Ac adipiscing nibh porttitor erat risus justo adipiscing adipiscing amet placerat accumsan. Vis. Faucibus odio magna tempus adipiscing a non. In mi primis arcu ut non accumsan vivamus ac blandit adipiscing adipiscing arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida adipiscing eget accumsan ac nunc adipiscing adipiscing lorem ipsum dolor sit amet nullam veroeros adipiscing.</p>
@@ -423,11 +488,11 @@
 													<h3>Preformatted</h3>
 													<pre><code>i = 0;
 
-													while (!deck.isInOrder()) {
-														print 'Iteration ' + i;
-														deck.shuffle();
-														i++;
-													}
+																while (!deck.isInOrder()) {
+																	print 'Iteration ' + i;
+																	deck.shuffle();
+																	i++;
+																}
 
 													print 'It took ' + i + ' iterations to sort the deck.';
 													</code></pre>
