@@ -7,42 +7,35 @@
 -->
 <html>
 	<head>
-		<title>Elements - Editorial by HTML5 UP</title>
+		<title>CDP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 	</head>
 	<body class="is-preload">
-
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-
 							<!-- Header -->
 								<header id="header">
-									<a href="{% url 'first_page' %}" class="logo"><strong>CDP</strong> by Data & Connection</a>
-
+									<a href="{% url 'first_page' %}" class="logo"><strong>Editorial</strong> by Data & Connection</a>
 								</header>
-
 							<!-- Content -->
 <section>
 									<header class="main">
 										<h1>You can crawl Google Image Data!</h1>
 									</header>
-
 									<h3>CDP crawling request form</h3>
-
 													<form method="post" action="#">
 														<div class="row gtr-uniform">
 															<div class="col-6 col-12-xsmall">
-																<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+																<input type="text" name="name" id="name" value="" placeholder="Name" />
 															</div>
 															<div class="col-6 col-12-xsmall">
-																<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+																<input type="text" name="EmployeeNumber" id="EmployeeNumber" value="" placeholder="Employee Number ex) KR62111" />
 															</div>
 															<!-- Break -->
 															<div class="col-12">
@@ -57,7 +50,7 @@
 																	<option value="1">Voice</option>
 																	<option value="1">Video</option>
 																	<option value="1">Vision</option>
-																	<option value="1">Data&Connection</option>
+																	<option value="1">Data & Connection</option>
 																	<option value="1">NSML Competition TF</option>
 																	<option value="1">DUET TF</option>
 																	<option value="1">Pasha TF</option>
@@ -65,58 +58,37 @@
 															</div>
 															<!-- Break -->
 															<div class="col-4 col-12-small">
-																<input type="radio" id="jpg_only" name="jpg_only">
-																<label for="jpg_only">JPG only</label>
+																<input type="radio" id="jpg_only" name="ImageSelect">
+																<label for="jpg_only">Image only</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="url" name="url">
-																<label for="url">URL+META</label>
+																<input type="radio" id="url" name="ImageSelect">
+																<label for="url">Image URL + META Info (.csv)</label>
 															</div>
-
 															<!-- Break -->
-
-
 															<!-- Break -->
+															<div class="col-12">
+																<textarea name="demo-message" id="demo-message" placeholder="데이터가 어떤 연구 / 프로젝트에 사용 될지 말씀해주세요" rows="3"></textarea>
+															</div>
 															<div class="col-6 col-12-xsmall">
-																<input type="text" name="arg_tag" id="arg_tag" value="" placeholder="Crawling Content" />
+																<input type="text" name="arg_tag" id="arg_tag" value="" placeholder="Keyword to crawl images from google ex) dog" />
 															</div>
-															<div class="col-12">
-																<textarea name="demo-message" id="demo-message" placeholder="데이터가 어떤 연구 / 프로젝트에 사용 될지 말씀해주세요" rows="6"></textarea>
+															<div class="col-6 col-12-xsmall">
+																<input type="text" name="arg_max" id="arg_max" value="" placeholder="Maximum number of images to download ex) 10000" />
 															</div>
-															<!-- Break -->
-															<div class="col-6 col-12-small">
-																<input type="checkbox" id="demo-copy" name="demo-copy">
-																<label for="demo-copy">Email me a copy</label>
-															</div>
-															<div class="col-6 col-12-small">
-																<input type="checkbox" id="accept" name="accept" checked>
-																<label for="accet">I accept CDP Terms&Conditions</label>
-															</div>
-															<!-- Break -->
-															<div class="col-12">
-																<textarea name="feedback" id="feedback" placeholder="문의사항이 있는 경우 입력해주시면 담당자가 답변해드리도록 하겠습니다" rows="3"></textarea>
-															</div>
-															<!-- Break -->
+
 															<div class="col-12">
 																<ul class="actions">
-																	<li><input type="submit" value="Request" class="primary" /></li>
+																	<li><input type="submit" value="Let's Crawl!" class="primary" /></li>
 																	<li><input type="reset" value="Reset" /></li>
 																</ul>
 															</div>
 														</div>
 													</form>
-
 									<!-- Content -->
-
-
 									<!-- Elements -->
-
 										<div class="row gtr-200">
 											<div class="col-6 col-12-medium">
-
-
-
-
 											</div>
 										</div>
 
@@ -170,8 +142,6 @@
 										</li> -->
 									</ul>
 								</nav>
-
-
 							<!-- Section -->
 								<section>
 									<header class="major">
@@ -190,12 +160,9 @@
 								<footer id="footer">
 									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 								</footer>
-
 						</div>
 					</div>
-
 			</div>
-
 		<!-- Scripts -->
 			<script src="{% static 'js/jquery.min.js' %}"></script>
 			<script src="{% static 'js/browser.min.js' %}"></script>
