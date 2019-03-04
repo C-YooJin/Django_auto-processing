@@ -7,7 +7,7 @@ class google_crawl(models.Model):
     team_name = models.CharField(max_length=20, help_text='- TEAM NAME -')
     download_type = models.IntegerField()       # Image only -> 0 / url + meta info -> 1
     crawl_contents = models.TextField()
-    request_data = models.DateField(auto_now_add=True)
+    request_date = models.DateField(auto_now_add=True)
     keyword = models.CharField(max_length=20, help_text='keyword to crawl images from google ex) dog')
     max_num = models.IntegerField()
 
