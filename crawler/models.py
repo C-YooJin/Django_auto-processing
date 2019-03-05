@@ -1,6 +1,5 @@
 from django.db import models
 
-
 TEAMS = (
     ('', 'Choose your team...'),
     ('1', 'NSML'),
@@ -34,4 +33,3 @@ class Google_crawl(models.Model):
     max_num = models.IntegerField(help_text='Maximum number of images to download ex) 10000')
     request_date = models.DateTimeField(auto_now_add=True)
 
-# Create your models here.
