@@ -1,8 +1,25 @@
-from django.forms import ModelForm
-from .models import google_crawl
 
-class GoogleCrawlForm(ModelForm):
+from django import forms
+from .models import Google_crawl
+from crispy_forms.helper import FormHelper, Layout
+from crispy_forms.bootstrap import InlineRadios, Div
+from crispy_forms.layout import Submit
+#from django.forms.widgets import RadioSelect
+from django.utils.safestring import mark_safe
+
+
+
+class GoogleForm(forms.ModelForm):
+
     class Meta:
-        model = google_crawl
-        # fields = ['name', 'employee number', 'team name', 'download data type', 'crawl contents', 'keyword', 'max num']
-        exlude = ['request_id', 'request_data']
+        model = Google_crawl
+        fields = ('name', 'employee_number', 'download_type', 'team_name', 'crawl_info', 'keyword', 'max_num')
+        exclude = ('request_date',)
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.helper = FormHelper()
+            #self.helper.layout = Layout(Div(InlineRadios('download_type')))
+            self.helper.form_method = 'post'
+            self.helper.add_input(Submit('submit', 'Let\'s Crawl!'))
+
