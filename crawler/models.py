@@ -2,18 +2,18 @@ from django.db import models
 
 TEAMS = (
     ('', 'Choose your team...'),
-    ('1', 'NSML'),
-    ('2', 'AI Production'),
-    ('3', 'AI Research'),
-    ('4', 'Biz AI'),
-    ('5', 'OCR'),
-    ('6', 'Speech'),
-    ('7', 'Voice'),
-    ('8', 'Vision'),
-    ('9', 'Data & Connection'),
-    ('10', 'NSML Competition TF'),
-    ('11', 'DUET TF'),
-    ('12', 'Pasha TF')
+    ('NSML', 'NSML'),
+    ('AI Production', 'AI Production'),
+    ('AI Research', 'AI Research'),
+    ('Biz AI', 'Biz AI'),
+    ('OCR', 'OCR'),
+    ('Speech', 'Speech'),
+    ('Voice', 'Voice'),
+    ('Vision', 'Vision'),
+    ('Data & Connection', 'Data & Connection'),
+    ('NSML Competition TF', 'NSML Competition TF'),
+    ('DUET TF', 'DUET TF'),
+    ('Pasha TF', 'Pasha TF')
 )
 
 
@@ -24,8 +24,8 @@ JPG_YN = (
 
 class Google_crawl(models.Model):
     request_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=20, help_text='Name')
-    employee_number = models.CharField(max_length=12, help_text='Employee Number ex) KR62111')
+    name = models.CharField(max_length=20)
+    employee_number = models.CharField(max_length=12, help_text='ex) KR62111')
     team_name = models.CharField(max_length=20, help_text='- TEAM NAME -', choices=TEAMS)
     download_type = models.CharField(max_length=20, choices=JPG_YN)       # Image only -> 0 / url + meta info -> 1
     crawl_info = models.TextField(max_length=200, help_text='데이터가 어떤 연구 / 프로젝트에 사용 될지 말씀해주세요')
