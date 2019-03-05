@@ -7,12 +7,6 @@ from crispy_forms.layout import Submit
 from django.utils.safestring import mark_safe
 
 
-URL_YN = (
-    ('0', 'URL+Meta'),
-    ('1', 'JPG_ONLY')
-)
-
-
 class GoogleForm(forms.ModelForm):
     #team_name = forms.ChoiceField(choices=TEAMS)
     #download_type = forms.TypedChoiceField(widget=forms.RadioSelect(attrs={'style': 'display: inline-block'}), choices=URL_YN)
@@ -20,7 +14,7 @@ class GoogleForm(forms.ModelForm):
     class Meta:
         model = Google_crawl
         fields = ('name', 'employee_number', 'download_type', 'team_name', 'crawl_info', 'keyword', 'max_num')
-        exclude = ('request_date',)
+        exclude = ('request_date', 'request_id')
         #widgets = {'download_type' : forms.RadioSelect()}
 
         def __init__(self, *args, **kwargs):
