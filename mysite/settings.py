@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'firstpage',
     'crawler',
     'crispy_forms',
+    'background_task',
 ]
 
 MIDDLEWARE = [

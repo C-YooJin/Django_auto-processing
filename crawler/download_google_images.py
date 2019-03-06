@@ -1,10 +1,12 @@
 # pip install icrawler
 from icrawler.builtin import GoogleImageCrawler
-from datetime import date
+from background_task import background
 import os
+from datetime import date
 import argparse
 
 
+@background(schedule=1)
 def google_crawler_real(save, keyword, max_num):      # save, keyword, max_num 값 사용자로부터 받을 예정
 
     if not os.path.exists(save):

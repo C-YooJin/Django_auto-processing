@@ -7,6 +7,8 @@ from crispy_forms.layout import Submit
 #from django.forms.widgets import RadioSelect
 from django.utils.safestring import mark_safe
 
+
+# 크롤러 신청서 정보 저장
 class GoogleForm(forms.ModelForm):
 
     class Meta:
@@ -20,5 +22,6 @@ class GoogleForm(forms.ModelForm):
             #self.helper.layout = Layout(Div(InlineRadios('download_type')))
             self.helper.form_method = 'post'
             self.helper.add_input(Submit('submit', 'Let\'s Crawl!'))
+
 
 
