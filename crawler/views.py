@@ -14,7 +14,7 @@ class RequestCreateView(SuccessMessageMixin, CreateView):
     model = Google_crawl
     form_class = GoogleForm
     template_name = 'crawler/crawler_google.html'
-    success_url = ''
+    success_url = '/success'
     success_message = "hey, your request was created successfully"
 
     def form_valid(self, form):
@@ -25,21 +25,6 @@ class RequestCreateView(SuccessMessageMixin, CreateView):
         return super(RequestCreateView, self).form_valid(form), redirect('crawler/crawler_google.html')
 
 
-
-'''
-class googlecrawlerview(CreateView):
-    model = Google_crawl
-    form_class = GoogleCrawlerForm
-    template_name = 'crawler/crawler_google.html'
-
-    def form_valid(self, form):
-        keyword = form.cleaned_data['keyword']
-        max_num = form.cleaned_data['max_num']
-        save = '/Users/user/Downloads/googlecrawl/'
-        google_crawler_real(save, keyword, max_num)
-        return super().form_valid(form)
-
-'''
 def crawler_flickr(request):
     return render(request, 'crawler/crawler_flickr.html')
 
