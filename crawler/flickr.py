@@ -93,4 +93,4 @@ for i, photo in enumerate(photo_loader):
 
 idx = 0
 print(photos[idx])
-print(photos[idx]['photo_url'])
+# print(photos[idx]['photo_url'])
