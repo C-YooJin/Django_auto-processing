@@ -28,6 +28,13 @@
 								</header>
 							<!-- Content -->
 <section>
+	    					{% if messages %}
+        						{% for message in messages %}
+            						<p class="alert alert-dismissable {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+                    					{{ message }}
+            						</p>
+        						{% endfor %}
+							{% endif %}
 									<header class="main">
 										<h1>You can crawl Google Image Data!</h1>
 									</header>
