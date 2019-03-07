@@ -19,19 +19,21 @@ def google_crawler_real(save, keyword, max_num):      # save, keyword, max_num ê
         storage={'root_dir': save})
     
     for year in range(2018, 2018+1):
-        for month in [1, 4, 7, 10]:
-            filters = dict(
-                size='large',
-                type='photo',
-                date=((year, month, 1), (year, month+2, 30)))
+        # for month in month_lst:
+        # for month in [1, 4, 7, 10]:
+        filters = dict(
+            size='large',
+            type='photo',
+            license='noncommercial,modify',           # license
+            date=((year, 1, 1), (year, 12, 30)))
 
-            google_crawler.crawl(keyword=keyword,           # config.target_class -> keyword
-                                filters=filters,
-                                max_num=max_num,            # config.max_num -> max_num
-                                file_idx_offset='auto',
-                                min_size=(512, 512))
-        
-        print('year: {}, month: {}~{} finished..!'.format(year, month, month+2))
+        google_crawler.crawl(keyword=keyword,           # config.target_class -> keyword
+                            filters=filters,
+                            max_num=max_num,            # config.max_num -> max_num
+                            file_idx_offset='auto',
+                            min_size=(512, 512))
+
+        print('year: {}, month: {}~{} finished..!'.format(year, 1, 12))
 
 '''
 if __name__ == '__main__':
