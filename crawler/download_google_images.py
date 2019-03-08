@@ -16,8 +16,8 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
     num_of_data = next(os.walk(save))[2]  # dir is your directory path as string
 
     # 2010년 1월부터 크롤링
-    year = 2010
-    month = 1
+    years = 2010
+    months = 1
 
     while len(num_of_data) < num:
 
@@ -27,35 +27,31 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
             downloader_threads=4,
             storage={'root_dir': save})
 
-        for year in range(2018, 2018+1):
-            # for month in month_lst:
-            # for month in [1, 4, 7, 10]:
-            filters = dict(
-                size='large',
-                type='photo',
-                license='noncommercial,modify',           # license
-                date=((year, 1, 1), (year, 12, 30)))
+        for year in range(years, years + 1):
+            for month in [months]:
+                filters = dict(
+                    size='large',
+                    type='photo',
+                    date=((year, month, 1), (year, month + 2, 30)))
+
+                google_crawler.crawl(keyword=keyword,
+                                     filters=filters,
+                                     max_num=num+20,               # defalut값인 1000이 들어가면 100개만 다운 받고 싶을 때,
+                                     file_idx_offset='auto',        # 100 언저리에서 멈추지 않고 거의 1000가까이 크롤링 됨
+                                     min_size=(512, 512))
 
         # directory에 저장된 파일 수
         num_of_data = next(os.walk(save))[2]
 
+        print('year: {}, month: {}~{} finished..!'.format(years, months, months + 2))
+
         # next year
-        year += 1
-
         # repeat 1, 4, 7, 10 month
-        if month == 10:
-            month = 1
+        if months == 10:
+            years += 1
+            months = 1
         else:
-            month += 3
-
-            google_crawler.crawl(keyword=keyword,           # config.target_class -> keyword
-                                filters=filters,
-                                max_num=1000,            # config.max_num -> max_num
-                                file_idx_offset='auto',
-                                min_size=(512, 512))
-
-            print('year: {}, month: {}~{} finished..!'.format(year, 1, 12))
-
+            months += 3
 
 # directory 파일 개수 확인 후 num과 비교해서 NUm보다 작으면 while문 돌리기.
 
