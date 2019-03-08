@@ -34,9 +34,16 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
                     type='photo',
                     date=((year, month, 1), (year, month + 2, 30)))
 
+                if num <= 100:
+                    max_num = 20
+                if num > 100 and num <= 1000:
+                    max_num = 100
+                else:
+                    max_num = 1000
+
                 google_crawler.crawl(keyword=keyword,
                                      filters=filters,
-                                     max_num=num+20,               # defalut값인 1000이 들어가면 100개만 다운 받고 싶을 때,
+                                     max_num=max_num,               # defalut값인 1000이 들어가면 100개만 다운 받고 싶을 때,
                                      file_idx_offset='auto',        # 100 언저리에서 멈추지 않고 거의 1000가까이 크롤링 됨
                                      min_size=(512, 512))
 
