@@ -20,7 +20,7 @@ class RequestCreateView(SuccessMessageMixin, CreateView):
         keyword = form.cleaned_data['keyword']
         num = form.cleaned_data['max_num']
         save_dir = form.cleaned_data['name'] + '_' +form.cleaned_data['employee_number'] + '_' + form.cleaned_data['keyword']
-        save = '/Users/user/Downloads/{}'.format(save_dir)
+        save = '/Users/user/Documents/document/googlecrawler_test/{}'.format(save_dir)
         google_crawler_real(save, keyword, num)
         return super(RequestCreateView, self).form_valid(form)
 

@@ -16,10 +16,16 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
     num_of_data = next(os.walk(save))[2]  # dir is your directory path as string
 
     # 2010년 1월부터 크롤링
-    years = 2010
+    years = 2019
     months = 1
 
     while len(num_of_data) < num:
+
+        print("")
+        print("*************************************************")
+        print('year: {}, month: {}~{} started..!'.format(years, months, months + 2))
+        print("*************************************************")
+        print("")
 
         google_crawler = GoogleImageCrawler(
             feeder_threads=1,
@@ -36,7 +42,7 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
 
                 if num <= 100:
                     max_num = 20
-                if num > 100 and num <= 1000:
+                elif num > 100 and num <= 1000:
                     max_num = 100
                 else:
                     max_num = 1000
@@ -50,12 +56,16 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
         # directory에 저장된 파일 수
         num_of_data = next(os.walk(save))[2]
 
+        print("")
+        print("*************************************************")
         print('year: {}, month: {}~{} finished..!'.format(years, months, months + 2))
+        print("*************************************************")
+        print("")
 
         # next year
         # repeat 1, 4, 7, 10 month
         if months == 10:
-            years += 1
+            years -= 1
             months = 1
         else:
             months += 3
