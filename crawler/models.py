@@ -40,7 +40,7 @@ class flickr_crawl(models.Model):
     name = models.CharField(max_length=20)
     employee_number = models.CharField(max_length=12, help_text='ex) KR62111')
     team_name = models.CharField(max_length=20, help_text='- TEAM NAME -', choices=TEAMS)
-    download_type = models.CharField(max_length=20, choices=JPG_YN)  # JSON -> 0 / csv -> 1 / only image -> 2
+    # download_type = models.CharField(max_length=20, choices=JPG_YN)  # JSON -> 0 / csv -> 1 / only image -> 2
     crawl_info = models.TextField(max_length=200, help_text='Simply write down what research the data will be used in.')
     keyword = models.CharField(max_length=50, help_text='keyword to crawl images from google ex) dog')
     max_num = models.IntegerField(help_text='Maximum number of images to download ex) 10000')

@@ -21,7 +21,6 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
 
     while len(num_of_data) < num:
 
-        print("")
         print("*************************************************")
         print('year: {}, month: {}~{} started..!'.format(years, months, months + 2))
         print("*************************************************")
@@ -69,6 +68,8 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
             months = 1
         else:
             months += 3
+
+    print("Crawling is complete!")
 
 # directory 파일 개수 확인 후 num과 비교해서 NUm보다 작으면 while문 돌리기.
 

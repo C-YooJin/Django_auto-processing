@@ -18,7 +18,6 @@ class GoogleForm(forms.ModelForm):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.helper = FormHelper()
-            #self.helper.layout = Layout(Div(InlineRadios('download_type')))
             self.helper.form_method = 'post'
             self.helper.add_input(Submit('submit', 'Let\'s Crawl!'))
 
@@ -26,13 +25,12 @@ class GoogleForm(forms.ModelForm):
 class flickrform(forms.ModelForm):
     class Meta:
         model = flickr_crawl
-        fields = ('name', 'employee_number', 'download_type', 'team_name', 'crawl_info', 'keyword', 'max_num')
+        fields = ('name', 'employee_number', 'team_name', 'crawl_info', 'keyword', 'max_num')
         exclude = ('request_date', 'request_id')
 
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.helper = FormHelper()
-            # self.helper.layout = Layout(Div(InlineRadios('download_type')))
             self.helper.form_method = 'post'
             self.helper.add_input(Submit('submit', 'Let\'s Crawl!'))
 
