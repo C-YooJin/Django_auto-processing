@@ -69,6 +69,8 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
         else:
             months += 3
 
+    os.system('image-cleaner /Users/user/Downloads/Google_crawling/'+save)
+
     print("Crawling is complete!")
 
 # directory 파일 개수 확인 후 num과 비교해서 NUm보다 작으면 while문 돌리기.
