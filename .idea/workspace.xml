@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c683349-8df0-450d-be02-bf11fd1c7801" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/crawler/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/download_google_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/download_google_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/filter_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/filter_images.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/instagram-scraper" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/instagram-scraper" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/templates/crawler/crawler_google.html" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/templates/crawler/crawler_google.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/filter_images.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+            <state relative-caret-position="-467">
+              <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -28,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crawler/download_google_images.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="831">
-              <caret line="71" column="36" lean-forward="true" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+            <state relative-caret-position="680">
+              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
               <folding>
                 <element signature="e#23#70#0" expanded="true" />
               </folding>
@@ -41,19 +40,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/test.py">
+        <entry file="file://$PROJECT_DIR$/crawler/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+            <state relative-caret-position="340">
+              <caret line="20" column="101" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
+              <folding>
+                <element signature="e#0#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,23 +72,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/templates/crawler/crawler_google.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="218">
+              <caret line="129" column="40" selection-start-line="129" selection-start-column="40" selection-end-line="132" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/templates/crawler/crawler_flickr.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="129" column="79" selection-start-line="129" selection-start-column="79" selection-end-line="129" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/templates/crawler/crawler_instagram.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
               <caret line="132" column="79" selection-start-line="132" selection-start-column="79" selection-end-line="132" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/admin.py">
+        <entry file="file://$PROJECT_DIR$/firstpage/templates/firstpage/index_real.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="271">
+              <caret line="187" column="79" selection-start-line="187" selection-start-column="79" selection-end-line="187" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -104,21 +112,9 @@
         <entry file="file://$PROJECT_DIR$/crawler/download_flickr_json.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1188">
-              <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+              <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
               <folding>
                 <element signature="e#24#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,6 +149,8 @@
       <find>f</find>
       <find>run</find>
       <find>데이터</find>
+      <find>home</find>
+      <find>config</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,7 +170,6 @@
         <option value="$PROJECT_DIR$/firstpage/models.py" />
         <option value="$PROJECT_DIR$/firstpage/templates/firstpage/index.html" />
         <option value="$PROJECT_DIR$/firstpage/templates/firstpage/index_fix.html" />
-        <option value="$PROJECT_DIR$/firstpage/templates/firstpage/index_real.html" />
         <option value="$PROJECT_DIR$/firstpage/views.py" />
         <option value="$PROJECT_DIR$/firstpage/urls.py" />
         <option value="$PROJECT_DIR$/crawler/download_google_images_1.py" />
@@ -181,25 +178,28 @@
         <option value="$PROJECT_DIR$/crawler/instagram-scraper/flickr.py" />
         <option value="$PROJECT_DIR$/crawler/forms.py" />
         <option value="$PROJECT_DIR$/crawler/urls.py" />
-        <option value="$PROJECT_DIR$/crawler/templates/crawler/crawler_flickr.html" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/crawler/flickr.py" />
         <option value="$PROJECT_DIR$/download_flickr_json.py" />
         <option value="$PROJECT_DIR$/crawler/models.py" />
         <option value="$PROJECT_DIR$/crawler/admin.py" />
         <option value="$PROJECT_DIR$/crawler/download_flickr_json.py" />
-        <option value="$PROJECT_DIR$/crawler/views.py" />
-        <option value="$PROJECT_DIR$/crawler/download_google_images.py" />
         <option value="$PROJECT_DIR$/crawler/test.py" />
         <option value="$PROJECT_DIR$/crawler/templates/crawler/crawler_google.html" />
+        <option value="$PROJECT_DIR$/crawler/templates/crawler/crawler_flickr.html" />
+        <option value="$PROJECT_DIR$/crawler/templates/crawler/crawler_instagram.html" />
+        <option value="$PROJECT_DIR$/firstpage/templates/firstpage/index_real.html" />
+        <option value="$PROJECT_DIR$/crawler/views.py" />
+        <option value="$PROJECT_DIR$/crawler/filter_images.py" />
+        <option value="$PROJECT_DIR$/crawler/download_google_images.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-92" />
-    <option name="y" value="23" />
-    <option name="width" value="1943" />
-    <option name="height" value="777" />
+    <option name="x" value="1737" />
+    <option name="y" value="254" />
+    <option name="width" value="1719" />
+    <option name="height" value="970" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -232,6 +232,24 @@
               <item name="crawler" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="crawler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djangogirls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djangogirls" type="462c0819:PsiDirectoryNode" />
+              <item name="firstpage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djangogirls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djangogirls" type="462c0819:PsiDirectoryNode" />
+              <item name="firstpage" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djangogirls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djangogirls" type="462c0819:PsiDirectoryNode" />
+              <item name="firstpage" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="firstpage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="djangogirls" type="b2602c69:ProjectViewProjectNode" />
@@ -383,10 +401,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <frame x="1737" y="254" width="1719" height="970" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18336026" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13536076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -402,7 +420,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Run" order="3" visible="true" weight="0.2358643" />
+      <window_info anchor="right" id="Run" order="3" visible="true" weight="0.044126417" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -549,13 +567,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/backs.py" />
     <entry file="file://$PROJECT_DIR$/crawler/instagram-scraper/flickr.py" />
-    <entry file="file://$PROJECT_DIR$/firstpage/templates/firstpage/index_real.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/tests.py" />
     <entry file="file://$PROJECT_DIR$/crawler/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -564,13 +575,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/templates/crawler/crawler_flickr.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -626,16 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -667,40 +661,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/filter_images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/download_flickr_json.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
-          <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
           <folding>
             <element signature="e#24#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/download_google_images.py">
+    <entry file="file://$PROJECT_DIR$/crawler/templates/crawler/crawler_google.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
-          <caret line="71" column="36" lean-forward="true" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+        <state relative-caret-position="218">
+          <caret line="129" column="40" selection-start-line="129" selection-start-column="40" selection-end-line="132" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/templates/crawler/crawler_flickr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="129" column="79" selection-start-line="129" selection-start-column="79" selection-end-line="129" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/templates/crawler/crawler_instagram.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="132" column="79" selection-start-line="132" selection-start-column="79" selection-end-line="132" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firstpage/templates/firstpage/index_real.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="187" column="79" selection-start-line="187" selection-start-column="79" selection-end-line="187" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/filter_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-467">
+          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
           <folding>
-            <element signature="e#23#70#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/templates/crawler/crawler_google.html">
+    <entry file="file://$PROJECT_DIR$/crawler/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="132" column="79" selection-start-line="132" selection-start-column="79" selection-end-line="132" selection-end-column="79" />
+        <state relative-caret-position="340">
+          <caret line="20" column="101" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/download_google_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#23#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

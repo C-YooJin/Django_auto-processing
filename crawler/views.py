@@ -19,8 +19,8 @@ class RequestCreateView(SuccessMessageMixin, CreateView):
         keyword = form.cleaned_data['keyword']
         num = form.cleaned_data['max_num']
         save_dir = form.cleaned_data['name'] + '_' +form.cleaned_data['employee_number'] + '_' + form.cleaned_data['keyword']
-        save = '/Users/user/Downloads/Google_crawling/{}'.format(save_dir)
-        google_crawler_real(save, keyword, num)
+        save = '/Users/user/Downloads/Google_crawling/unfiltered/{}'.format(save_dir)
+        google_crawler_real(save, keyword, num, save_dir)
         send_mail(
             subject= '[Google clawler] {}님의 크롤링 요청'.format(form.cleaned_data['name']),                        # 메일 제목
             message= '{}팀의 {}님께서 {}, {}건에 대해 크롤링을 요청했습니다. 크롤링 정보: {}'

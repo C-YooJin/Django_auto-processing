@@ -2,15 +2,19 @@
 from icrawler.builtin import GoogleImageCrawler
 from background_task import background
 import os
+from .filter_images import filter
+import subprocess
 from datetime import date
 import argparse
 
 
 @background(schedule=1)
-def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 사용자로부터 받을 예정
+def google_crawler_real(save, keyword, num, save_dir):      # save, keyword, max_num 값 사용자로부터 받을 예정
 
     if not os.path.exists(save):
         os.makedirs(save)
+
+    #save_dir = {이름_사번_keyword}
 
     # 현재 크롤링 된 데이터 수
     num_of_data = next(os.walk(save))[2]  # dir is your directory path as string
@@ -69,7 +73,15 @@ def google_crawler_real(save, keyword, num):      # save, keyword, max_num 값 �
         else:
             months += 3
 
-    os.system('image-cleaner /Users/user/Downloads/Google_crawling/'+save)
+    os.system('image-cleaner /Users/user/Downloads/Google_crawling/unfiltered/'+save_dir)
+    # 만약에 keyword가 json파일 value값으로 있으면 돌려야됨. 안 그러면 오류남.
+    # dir 수정
+    try:
+        filter(keyword, save, save_dir)
+    except KeyError:
+        print('your keyword is not in imagenet class index!')
+        f = open('/Users/user/Downloads/Google_crawling/filtered/'+save_dir+'/imagenet class index에 없는 키워드라 필터링이 불가합니.txt', 'w')
+        f.close
 
     print("Crawling is complete!")
 
