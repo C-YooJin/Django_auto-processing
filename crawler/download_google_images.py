@@ -1,12 +1,12 @@
 # pip install icrawler
 from icrawler.builtin import GoogleImageCrawler
+from icrawler import ImageDownloader
 from background_task import background
-import os
+from six.moves.urllib.parse import urlparse
 from .filter_images import filter
-import subprocess
-from datetime import date
-import argparse
-
+from collections import OrderedDict
+import os
+import base64
 
 @background(schedule=1)
 def google_crawler_real(save, keyword, num, save_dir):      # save, keyword, max_num 값 사용자로부터 받을 예정
@@ -80,7 +80,7 @@ def google_crawler_real(save, keyword, num, save_dir):      # save, keyword, max
         filter(keyword, save, save_dir)
     except KeyError:
         print('your keyword is not in imagenet class index!')
-        f = open('/Users/user/Downloads/Google_crawling/filtered/'+save_dir+'/imagenet class index에 없는 키워드라 필터링이 불가합니.txt', 'w')
+        f = open('/Users/user/Downloads/Google_crawling/filtered/'+save_dir+'/imagenet class index에 없는 키워드라 필터링이 불가합니다.txt', 'w')
         f.close
 
     print("Crawling is complete!")

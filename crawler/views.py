@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls.base import reverse_lazy
 from django.core.mail import send_mail
+import subprocess
 
 class RequestCreateView(SuccessMessageMixin, CreateView):
     model = Google_crawl
@@ -17,10 +18,20 @@ class RequestCreateView(SuccessMessageMixin, CreateView):
 
     def form_valid(self, form):
         keyword = form.cleaned_data['keyword']
+        keyword = [x.strip() for x in keyword.split(',')]
         num = form.cleaned_data['max_num']
-        save_dir = form.cleaned_data['name'] + '_' +form.cleaned_data['employee_number'] + '_' + form.cleaned_data['keyword']
-        save = '/Users/user/Downloads/Google_crawling/unfiltered/{}'.format(save_dir)
-        google_crawler_real(save, keyword, num, save_dir)
+        # save_dir = form.cleaned_data['name'] + '_' +form.cleaned_data['employee_number'] + '_' + form.cleaned_data['keyword']
+        # save = '/Users/user/Downloads/Google_crawling/unfiltered/{}'.format(save_dir)
+        subprocess.Popen(['python3', 'manage.py', 'process_tasks'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if len(keyword) > 1:
+            for i in range(len(keyword)):
+                save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number'] + '_{}'.format(keyword[i])
+                save = '/Users/user/Downloads/Google_crawling/unfiltered/{}'.format(save_dir)
+                google_crawler_real(save, keyword[i], num, save_dir)
+        else:
+            save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number'] + '_{}'.format(keyword[0])
+            save = '/Users/user/Downloads/Google_crawling/unfiltered/{}'.format(save_dir)
+            google_crawler_real(save, keyword[0], num, save_dir)                       # 수정포인트
         send_mail(
             subject= '[Google clawler] {}님의 크롤링 요청'.format(form.cleaned_data['name']),                        # 메일 제목
             message= '{}팀의 {}님께서 {}, {}건에 대해 크롤링을 요청했습니다. 크롤링 정보: {}'
@@ -45,6 +56,7 @@ class flickrcreateview(SuccessMessageMixin, CreateView):
         save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number'] + '_' + form.cleaned_data[
             'keyword']
         save = '/Users/user/Downloads/Flickr_crawling/{}'.format(save_dir)
+        subprocess.Popen(['python3', 'manage.py', 'process_tasks'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         flickr_json(keyword, save, num)
         send_mail(
             subject='[Flickr clawler] {}님의 크롤링 요청'.format(form.cleaned_data['name']),  # 메일 제목
