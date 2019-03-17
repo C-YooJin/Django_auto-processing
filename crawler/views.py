@@ -70,11 +70,14 @@ class flickrcreateview(SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         keyword = form.cleaned_data['keyword']
         num = form.cleaned_data['max_num']
+        num = [x.strip() for x in num.split(',')]
+        num = int(num[0])
         save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number'] + '_' + form.cleaned_data[
             'keyword']
         save = '/Users/user/Downloads/Flickr_crawling/{}'.format(save_dir)
+
         subprocess.Popen(['python3', 'manage.py', 'process_tasks'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        flickr_json(keyword, save, num)
+        flickr_json(keyword, save, num, save_dir)
         send_mail(
             subject='[Flickr clawler] {}님의 크롤링 요청'.format(form.cleaned_data['name']),  # 메일 제목
             message='{}팀의 {}님께서 {}, {}건에 대해 크롤링을 요청했습니다. 크롤링 정보: {}'

@@ -8,7 +8,7 @@ from datetime import datetime
 from background_task import background
 
 @background(schedule=1)
-def flickr_json(keyword, save, num):
+def flickr_json(keyword, save, num, save_dir):
     # license dict
     license = {
         "cc-by-nc-sa": {
@@ -34,10 +34,10 @@ def flickr_json(keyword, save, num):
     flickr = flickrapi.FlickrAPI('c6a2c45591d4973ff525042472446ca2', '202ffe6f387ce29b', cache=True)
 
     # For information about arguments, see https://www.flickr.com/services/api/flickr.photos.search.html
-    min_upload_date = '2011-1-1'
-    max_upload_date = '2018-12-31'
+    min_upload_date = '2000-1-1'
+    max_upload_date = str(datetime.now())       # 현재 시간까지
     url_type = 'o'  # (1) 수정포인트: 고화질 -> 범위 확장 필요함
-    max_title_len = 15
+    max_title_len = 30
 
     # license test
     license_type = 'cc-by-sa'
@@ -46,6 +46,8 @@ def flickr_json(keyword, save, num):
     license_url = license[license_type]['url']
     print('License name: {}'.format(license_name))
     print('License url: {}'.format(license_url))
+
+    # per_page는 가만히 두고, pages 수정
 
     photo_loader = flickr.walk(
         text=keyword,
@@ -57,7 +59,7 @@ def flickr_json(keyword, save, num):
         min_upload_date=min_upload_date,  # 위에
         max_upload_date=max_upload_date,  # 위에
         license=license_id,
-        pages=200,
+        pages= num + 20,
         per_page=500,  # 500 is maximum
         safe_search=1)
 
@@ -91,20 +93,32 @@ def flickr_json(keyword, save, num):
             photo_idx += 1
 
         if (i + 1) % 100 == 0:
-            print('Iterations: {}, Number of photos: {}'.format(i + 1, photo_idx))  # enumerate에 의해서
+            print('Iterations: {}, Number of photos: {}'.format(i + 1, photo_idx))  # enumerate에 의해
 
         # comment out the below lines for real usage
-        if (i + 1) > (num + 1000):  # num + 500
+        # if (i + 1) > num_fix:
+        #     break
+
+        if num < 500:
+            num_fix = num + 100
+        elif num >= 500 and num < 1000:
+            num_fix = num + 200
+        elif num >= 1000 and num < 10000:
+            num_fix = num + 1000
+        elif num > 10000:
+            num_fix = num + 3000
+
+
+        if photo_idx > num_fix:
             break
 
             # Write JSON
     if not os.path.exists(save):
         os.makedirs(save)
-    with open(save + '/flickr_result.json', 'w', encoding="utf-8") as make_file:
+    with open(save + '/{}.json'.format(save_dir), 'w', encoding="utf-8") as make_file:
         json.dump(photos, make_file, ensure_ascii=False, indent="\t")
 
 
-# idx = 0
-# print(photos[1])
-# print(photos[idx]['photo_url'])
-# print(json.dumps(photos, ensure_ascii=False, indent="\t"))
+# 실행
+#if __name__ == "__main__":
+#   flickr_json('tiger', '/Users/user/Downloads/Flick_test', 1000, 'test')
