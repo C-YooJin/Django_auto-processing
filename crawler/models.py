@@ -20,8 +20,8 @@ TEAMS = (
 
 
 JPG_YN = (
-    ('0', 'JPG_ONLY'),
-    ('1', 'URL+Meta')
+    ('0', 'Image Only'),
+    ('1', 'JSON with meta information')
 )
 
 class Google_crawl(models.Model):
@@ -29,10 +29,10 @@ class Google_crawl(models.Model):
     name = models.CharField(max_length=20)
     employee_number = models.CharField(max_length=12, help_text='ex) KR62111')
     team_name = models.CharField(max_length=20, help_text='- TEAM NAME -', choices=TEAMS)
-    download_type = models.CharField(max_length=20, choices=JPG_YN)       # Image only -> 0 / url + meta info -> 1
-    crawl_info = models.TextField(max_length=200, help_text='Simply write down what research the data will be used in.')
-    keyword = models.CharField(max_length=50, help_text='keyword to crawl images from google. If the keyword includes a space bar, mark it as underbar. ex) green_snake')
-    max_num = models.IntegerField(help_text='Number of images to download ex) 10000')
+    download_type = models.CharField(max_length=20, choices=JPG_YN)       # Image only -> 0 / JSON with meta info. -> 1
+    crawl_info = models.TextField(max_length=100, help_text='Simply write down what research the data will be used in.')
+    keyword = models.CharField(max_length=100, help_text='keyword to crawl images from google. If the keyword includes a space bar, mark it as underbar. ex) green_snake')
+    max_num = models.CharField(max_length=50, help_text='Number of images to download. 500이상 입력해주세요. ex) 10000')
     request_date = models.DateTimeField(auto_now_add=True)
 
 class flickr_crawl(models.Model):
@@ -41,9 +41,9 @@ class flickr_crawl(models.Model):
     employee_number = models.CharField(max_length=12, help_text='ex) KR62111')
     team_name = models.CharField(max_length=20, help_text='- TEAM NAME -', choices=TEAMS)
     # download_type = models.CharField(max_length=20, choices=JPG_YN)  # JSON -> 0 / csv -> 1 / only image -> 2
-    crawl_info = models.TextField(max_length=200, help_text='Simply write down what research the data will be used in.')
-    keyword = models.CharField(max_length=50, help_text='keyword to crawl images from google ex) dog')
-    max_num = models.IntegerField(help_text='Number of images to download ex) 10000')
+    crawl_info = models.TextField(max_length=100, help_text='Simply write down what research the data will be used in.')
+    keyword = models.CharField(max_length=100, help_text='keyword to crawl images from google. ex) dog')
+    max_num = models.CharField(max_length=50, help_text='Number of images to download. 500이상 입력해주세요. ex) 10')
     request_date = models.DateTimeField(auto_now_add=True)
 
 class instagram_crawler(models.Model):
@@ -51,8 +51,8 @@ class instagram_crawler(models.Model):
     name = models.CharField(max_length=20)
     employee_number = models.CharField(max_length=12, help_text='ex) KR62111')
     team_name = models.CharField(max_length=20, help_text='- TEAM NAME -', choices=TEAMS)
-    download_type = models.CharField(max_length=20, choices=JPG_YN)  # JSON -> 0 / csv -> 1 / only image -> 2
-    crawl_info = models.TextField(max_length=200, help_text='Simply write down what research the data will be used in.')
-    keyword = models.CharField(max_length=50, help_text='keyword to crawl images from google ex) dog')
-    max_num = models.IntegerField(help_text='Number of images to download ex) 10000')
+    download_type = models.CharField(max_length=20, choices=JPG_YN)  # Image only -> 0 / JSON with meta info. -> 1
+    crawl_info = models.TextField(max_length=100, help_text='Simply write down what research the data will be used in.')
+    keyword = models.CharField(max_length=100, help_text='keyword to crawl images from google ex) dog')
+    max_num = models.CharField(max_length=50, help_text='Number of images to download. ex) 10000')
     request_date = models.DateTimeField(auto_now_add=True)

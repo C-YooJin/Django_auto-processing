@@ -133,3 +133,6 @@ EMAIL_HOST_USER = 'yoojin31222@gmail.com'
 EMAIL_HOST_PASSWORD = 'dbwldchl312'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+#user model
+

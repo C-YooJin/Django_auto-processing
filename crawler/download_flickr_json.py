@@ -57,7 +57,7 @@ def flickr_json(keyword, save, num):
         min_upload_date=min_upload_date,  # 위에
         max_upload_date=max_upload_date,  # 위에
         license=license_id,
-        pages=100,
+        pages=200,
         per_page=500,  # 500 is maximum
         safe_search=1)
 
@@ -94,7 +94,7 @@ def flickr_json(keyword, save, num):
             print('Iterations: {}, Number of photos: {}'.format(i + 1, photo_idx))  # enumerate에 의해서
 
         # comment out the below lines for real usage
-        if (i + 1) > 1000:  # num + 500
+        if (i + 1) > (num + 1000):  # num + 500
             break
 
             # Write JSON

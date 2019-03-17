@@ -1,10 +1,6 @@
-# pip install icrawler
 from icrawler.builtin import GoogleImageCrawler
-from icrawler import ImageDownloader
 from background_task import background
-from six.moves.urllib.parse import urlparse
 from .filter_images import filter
-from collections import OrderedDict
 import os
 import base64
 
@@ -77,7 +73,7 @@ def google_crawler_real(save, keyword, num, save_dir):      # save, keyword, max
     # 만약에 keyword가 json파일 value값으로 있으면 돌려야됨. 안 그러면 오류남.
     # dir 수정
     try:
-        filter(keyword, save, save_dir)
+        filter(keyword, save_dir)
     except KeyError:
         print('your keyword is not in imagenet class index!')
         f = open('/Users/user/Downloads/Google_crawling/filtered/'+save_dir+'/imagenet class index에 없는 키워드라 필터링이 불가합니다.txt', 'w')
@@ -85,7 +81,7 @@ def google_crawler_real(save, keyword, num, save_dir):      # save, keyword, max
 
     print("Crawling is complete!")
 
-# directory 파일 개수 확인 후 num과 비교해서 NUm보다 작으면 while문 돌리기.
+# directory 파일 개수 확인 후 num과 비교해서 NUm보다 작으면 while loop.
 
 '''
 if __name__ == '__main__':
