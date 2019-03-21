@@ -136,3 +136,5 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 #user model
 
+#pkill -f uwsgi -9
+#uwsgi --ini cdp_source/mysite_uwsgi.ini
