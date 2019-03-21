@@ -30,10 +30,11 @@ class MyImageDownloader(ImageDownloader):
 
 
         dictionary = {INDEX: {'file_url': task['file_url'], 'name': name}}
-        print(name)
-        print(dictionary)
         INDEX += 1
         FINAL.update(dictionary)
+        # FINAL[INDEX]['file_url'].append(task['file_url'])
+        # FINAL[INDEX]['name'].append(name)
+        print(FINAL)
 
         '''
         dictionary = {{'file_url': task['file_url'], 'name': name}}
@@ -72,4 +73,4 @@ def get_json(keyword, save, num, save_dir):
 
 # 실행
 #if __name__ == '__main__':
-#    get_json('sugar glider', '/Users/user/Downloads/url_test7', 10, 'result')
+#    get_json('sugar glider', '/Users/user/Downloads/Google_crawler/meta/', 10, 'result')

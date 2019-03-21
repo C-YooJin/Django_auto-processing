@@ -82,6 +82,7 @@ def filter(keyword, save_dir):
 
     print('Start filtering images..!')
 
+    keyword = keyword.replace(' ', '_')
     target_idx = class2idx[keyword.lower()]
     is_target = []
     start_time = time.time()

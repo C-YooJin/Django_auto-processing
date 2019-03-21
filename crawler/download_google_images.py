@@ -69,14 +69,21 @@ def google_crawler_real(save, keyword, num, save_dir):      # save, keyword, max
         else:
             months += 3
 
+    # 이미지 클리너
     os.system('image-cleaner /Users/user/Downloads/Google_crawling/unfiltered/'+save_dir)
+    # 이미지 중복 제거 (fdupes (md5sum))
+    os.system('fdupes -d -N -r /Users/user/Downloads/Google_crawling/unfiltered/'+save_dir)
+
     # 만약에 keyword가 json파일 value값으로 있으면 돌려야됨. 안 그러면 오류남.
     # dir 수정
+
+    # keyword_fix = keyword.replace(' ', '_')
+
     try:
         filter(keyword, save_dir)
     except KeyError:
         print('your keyword is not in imagenet class index!')
-        f = open('/Users/user/Downloads/Google_crawling/filtered/'+save_dir+'/imagenet class index에 없는 키워드라 필터링이 불가합니다.txt', 'w')
+        f = open('/Users/user/Downloads/Google_crawling/filtered/'+save_dir+'/imagenet class에 없는 키워드라 필터링이 불가합니다.txt', 'w')
         f.close
 
     print("Crawling is complete!")

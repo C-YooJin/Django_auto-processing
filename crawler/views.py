@@ -103,8 +103,6 @@ class instagramcreateview(SuccessMessageMixin, CreateView):
         save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number'] + '_' + form.cleaned_data['keyword']
         save = "/Users/user/Downloads/Instagram_crawling/{}".format(save_dir)
 
-        os.system('cd instagram-scraper/')
-
         # Crawling
         if form.cleaned_data['download_type'] == '0':         # choose Image only
             subprocess.Popen(['python3', 'manage.py', 'process_tasks'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
