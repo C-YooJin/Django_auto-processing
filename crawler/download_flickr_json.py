@@ -10,6 +10,7 @@ from background_task import background
 @background(schedule=1)
 def flickr_json(keyword, save, num, save_dir):
     # license dict
+    # global num_fix
     license = {
         "cc-by-nc-sa": {
             "id": 1, "name": "Attribution-NonCommercial-ShareAlike License (CC BY-NC-SA)",
@@ -59,7 +60,7 @@ def flickr_json(keyword, save, num, save_dir):
         min_upload_date=min_upload_date,  # 위에
         max_upload_date=max_upload_date,  # 위에
         license=license_id,
-        pages= num + 20,
+        # pages= num + 20,
         per_page=500,  # 500 is maximum
         safe_search=1)
 
@@ -95,21 +96,18 @@ def flickr_json(keyword, save, num, save_dir):
         if (i + 1) % 100 == 0:
             print('Iterations: {}, Number of photos: {}'.format(i + 1, photo_idx))  # enumerate에 의해
 
-        # comment out the below lines for real usage
-        # if (i + 1) > num_fix:
-        #     break
-
+        """
         if num < 500:
             num_fix = num + 100
         elif num >= 500 and num < 1000:
             num_fix = num + 200
         elif num >= 1000 and num < 10000:
             num_fix = num + 1000
-        elif num > 10000:
+        elif num >= 10000:
             num_fix = num + 3000
+        """
 
-
-        if photo_idx > num_fix:
+        if photo_idx > num:
             break
 
             # Write JSON
@@ -121,4 +119,4 @@ def flickr_json(keyword, save, num, save_dir):
 
 # 실행
 #if __name__ == "__main__":
-#   flickr_json('tiger', '/Users/user/Downloads/Flick_test', 1000, 'test')
+#   flickr_json('tiger', '/Users/user/Downloads/Flick_test3_20000개', 20000, 'test')

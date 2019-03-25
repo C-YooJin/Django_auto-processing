@@ -37,7 +37,7 @@ class MyImageDownloader(ImageDownloader):
         return '{}.{}'.format(filename, extension)
 
 
-#@background(schedule=1)
+@background(schedule=1)
 def get_json(keyword, save, num, save_dir):
     global FINAL
     if not os.path.exists(save):
@@ -50,9 +50,9 @@ def get_json(keyword, save, num, save_dir):
 
         basenum = 500
         if num > basenum:
-            iteration = (num // 500) +1
+            iteration = (num // 500) + 3
         else:
-            iteration =1
+            iteration = 2
 
         for i in range(iteration):
             google_crawler = GoogleImageCrawler(
@@ -117,10 +117,3 @@ def get_json(keyword, save, num, save_dir):
             dictlist.append(temp)
 
         number_of_idx = len(dictlist)
-
-
-
-
-
-
-get_json('sugar glider', '/Users/user/Downloads/google_meta_test1/', 500, 'haha')

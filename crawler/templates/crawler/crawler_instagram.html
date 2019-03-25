@@ -37,8 +37,8 @@
 									<header class="main">
 										<h1>You can crawl Instagram Image Data!</h1>
 									</header>
-									<h3>CDP crawling request form</h3>
-										<p> 인스타그램 크롤링 페이지 입니다. </p>
+										<h3>CDP crawling request form</h3>
+										<blockquote>If you want to enter multiple keywords, please use the space writing without comma. Please delete the space word in the word itself. As you know, it's not possible to use space on Instagram hashtag. ex) Rabbit dog sugarglider</blockquote>
 
 													{% block content %}
 													<form method="post" action="">
@@ -72,7 +72,7 @@
 																<!--<input type="text" name="arg_tag" id="arg_tag" value="" placeholder="Keyword to crawl images from google ex) dog" />>-->
 															</div>
 															<div class="col-6 col-12-xsmall">
-																{{ form.max_num|as_crispy_field }}
+																{{ form.num|as_crispy_field }}
 																<!--<input type="text" name="arg_max" id="arg_max" value="" placeholder="Maximum number of images to download ex) 10000" />>-->
 															</div>
 

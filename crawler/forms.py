@@ -37,7 +37,7 @@ class flickrform(forms.ModelForm):
 class instagramform(forms.ModelForm):
     class Meta:
         model = instagram_crawler
-        fields = ('name', 'employee_number', 'download_type', 'team_name', 'crawl_info', 'keyword', 'max_num')
+        fields = ('name', 'employee_number', 'download_type', 'team_name', 'crawl_info', 'keyword', 'num')
         exclude = ('request_date', 'request_id')
 
         def __init__(self, *args, **kwargs):

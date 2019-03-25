@@ -134,6 +134,12 @@ EMAIL_HOST_PASSWORD = 'dbwldchl312'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+# 위 메일 세팅 삭제
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'backendsmtp.naver.com'
+#EMAIL_PORT = 25
+#DEFAULT_FROM_EMAIL = 'yoojin.choi@navercorp.com'
+
 #user model
 
 #pkill -f uwsgi -9
