@@ -2,11 +2,16 @@ from collections import OrderedDict
 from icrawler import ImageDownloader
 from icrawler.builtin import GoogleImageCrawler
 from six.moves.urllib.parse import urlparse
-from background_task import background
+# from background_task import background
 # from .json_rm_dupe import json_rm
 import base64
 import os
 import json
+
+import multiprocessing as mp
+
+
+mp.process
 
 INDEX = 0
 FINAL = {}
@@ -37,7 +42,7 @@ class MyImageDownloader(ImageDownloader):
         return '{}.{}'.format(filename, extension)
 
 
-@background(schedule=1)
+# @background(schedule=1)
 def get_json(keyword, save, num, save_dir):
     global FINAL
     if not os.path.exists(save):
@@ -45,24 +50,50 @@ def get_json(keyword, save, num, save_dir):
 
     number_of_idx = 0
     count = 0
+
+    # 2010년 1월부터 크롤링
+    years = 2019
+    months = 1
+
     while number_of_idx < num:
         count += 1
 
-        basenum = 500
-        if num > basenum:
-            iteration = (num // 500) + 3
-        else:
-            iteration = 2
+        print("*************************************************")
+        print('year: {}, month: {}~{} started..!'.format(years, months, months + 2))
+        print("*************************************************")
+        print("")
 
-        for i in range(iteration):
-            google_crawler = GoogleImageCrawler(
-                downloader_cls=MyImageDownloader,
-                feeder_threads=1,
-                parser_threads=2,
-                downloader_threads=4,
-                storage={'root_dir': save})
+        #basenum = 500
+        #if num > basenum:
+        #    iteration = (num // 500) + 3
+        #else:
+        #    iteration = 2
 
-            google_crawler.crawl(keyword=keyword, max_num=500)#num)
+        #for i in range(iteration):
+        google_crawler = GoogleImageCrawler(
+            downloader_cls=MyImageDownloader,
+            feeder_threads=1,
+            parser_threads=2,
+            downloader_threads=4,
+            storage={'root_dir': save})
+
+        for year in range(years, years + 1):
+            for month in [months]:
+                filters = dict(
+                    size='large',
+                    type='photo',
+                    date=((year, month, 1), (year, month + 2, 30)))
+
+                if num <= 100:
+                    max_num = 20
+                elif num > 100 and num <= 1000:
+                    max_num = 100
+                else:
+                    max_num = 700
+
+                google_crawler.crawl(keyword=keyword,
+                                     filters=filters,
+                                     max_num=max_num)#num)
 
         with open(save+'/{}.json'.format(save_dir), 'w', encoding="utf-8") as make_file:
             json.dump(FINAL, make_file, ensure_ascii=False, indent="\t")
@@ -116,4 +147,24 @@ def get_json(keyword, save, num, save_dir):
             temp = [key, value]  # 원래도 list인데 이중 list로 처리해줌
             dictlist.append(temp)
 
+        print("")
+        print("*************************************************")
+        print('year: {}, month: {}~{} finished..!'.format(years, months, months + 2))
+        print("*************************************************")
+        print("")
+
+
         number_of_idx = len(dictlist)
+
+        print(number_of_idx)
+
+        # next year
+        # repeat 1, 4, 7, 10 month
+        if months == 10:
+            years -= 1
+            months = 1
+        else:
+            months += 3
+
+# 실행
+get_json('love', '/Users/user/Downloads/get_json_test4/', 10000, 'like')
