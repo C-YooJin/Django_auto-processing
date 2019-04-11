@@ -132,19 +132,18 @@ class instagramcreateview(SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         # extract keyword from db
         keyword = form.cleaned_data['keyword']
-
         # extract num from db
         num = form.cleaned_data['num']
 
         if form.cleaned_data['download_type'] == '0':  # choose Image only
             subprocess.Popen(['python3', 'manage.py', 'process_tasks'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number']
+            save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number'] + '_' + form.cleaned_data['keyword']
             save = '/Users/user/Downloads/Instagram_crawling/Image/{}'.format(save_dir)
             run_image_only(keyword, num, save)
 
         elif form.cleaned_data['download_type'] == '1':  # choose json with meta info.
             subprocess.Popen(['python3', 'manage.py', 'process_tasks'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number']
+            save_dir = form.cleaned_data['name'] + '_' + form.cleaned_data['employee_number'] + '_' + form.cleaned_data['keyword']
             save = '/Users/user/Downloads/Instagram_crawling/meta/{}'.format(save_dir)
             run_meta(keyword, num, save)
 
@@ -155,10 +154,11 @@ class instagramcreateview(SuccessMessageMixin, CreateView):
                                                                             form.cleaned_data['keyword'],
                                                                             form.cleaned_data['num'],
                                                                             form.cleaned_data['crawl_info']),
-            # from_email='yoojin.choi@navercorp.com',  # from
+            # from_email='yoojin.choi@navercorp.com',  # fromd
             # recipient_list=['yoojin.choi@navercorp.com'],  # to
             from_email='yoojin31222@gmail.com',  # from
             recipient_list=['yoojin31222@gmail.com'],  # to
             fail_silently=False,
         )
         return super(instagramcreateview, self).form_valid(form)
+

@@ -2,7 +2,7 @@ from collections import OrderedDict
 from icrawler import ImageDownloader
 from icrawler.builtin import GoogleImageCrawler
 from six.moves.urllib.parse import urlparse
-# from background_task import background
+from background_task import background
 # from .json_rm_dupe import json_rm
 import base64
 import os
@@ -42,7 +42,7 @@ class MyImageDownloader(ImageDownloader):
         return '{}.{}'.format(filename, extension)
 
 
-# @background(schedule=1)
+@background(schedule=1)
 def get_json(keyword, save, num, save_dir):
     global FINAL
     if not os.path.exists(save):
@@ -167,4 +167,4 @@ def get_json(keyword, save, num, save_dir):
             months += 3
 
 # 실행
-get_json('love', '/Users/user/Downloads/get_json_test4/', 10000, 'like')
+#get_json('love', '/Users/user/Downloads/get_json_test4/', 10000, 'like')
