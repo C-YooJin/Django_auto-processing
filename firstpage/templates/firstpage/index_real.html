@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
 {% load static %}
+<!-- 다국어 추가 부분 -->
+{% load i18n %}
 <!--
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -10,7 +12,6 @@
 		<title>CDP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
 		<link rel="stylesheet" href="{% static 'css/main.css' %}">
 		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 	</head>
@@ -36,14 +37,17 @@
 								</header>
 
 							<!-- Banner -->
+							<!-- 다국어 추가 -->
 								<section id="banner">
 									<div class="content">
 										<header class ="main">
+
 											<h1>Hi, This is CDP</h1>
 											<p><strong>Clova Data auto-Processing! </strong></p>
 										</header>
 										<p>When you model artificial intelligence, data is one of the most important thing. Without data, AI models cannot be created. CDP is the first step before AI modeling. CDP offers several crawlers for collect raw data. You can get the image data itself and the JSON file containing the meta informations. CDP will continue to improve! If you have any questions, please contact Data and connection team.</p>
 									</div>
+
 									<span class="image main">
 												<img src="/static/images/data_modi.png" alt="" />
 											</span>
@@ -81,7 +85,6 @@
 									</div>
 								</section>
 
-
 						</div>
 					</div>
 
@@ -103,6 +106,8 @@
 									</header>
 									<ul>
 										<li><a href="{% url 'first_page' %}">Homepage</a></li>
+										<li><a href="webdoc/templates/webdoc/webdoc.html">Crawl Request</a></li>
+										<!-- 잠시 닫아둠
 										<li>
 											<span class="opener">Image Crawler</span>
 											<ul>
@@ -110,7 +115,7 @@
 												<li><a href="{% url 'crawler_flickr' %}">Flickr</a></li>
 												<li><a href="{% url 'crawler_instagram' %}">Instagram</a></li>
 											</ul>
-										</li>
+										</li> -->
 									</ul>
 								</nav>
 

@@ -23,5 +23,5 @@ def run_meta(keyword, num, save):
 
 
 # 실행
-# run_image_only('brand', 10, '/Users/user/Downloads/Instagram_crawling/Image/test1/')
+#run_image_only('손글씨', 10000, '/Users/user/Downloads/Instagram_crawling/Image/sungrae/')
 #run_meta('influencer brand', '80000', '/Users/user/Downloads/instagram_crawling/junhee/')

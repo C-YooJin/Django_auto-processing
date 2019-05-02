@@ -1,5 +1,5 @@
 # MODEL 즉 테이블의 필드값을 지정해주는 파일
-
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 TEAMS = (
@@ -18,11 +18,11 @@ TEAMS = (
     ('Pasha TF', 'Pasha TF')
 )
 
-
 JPG_YN = (
     ('0', 'Image Only'),
     ('1', 'JSON with meta information')
 )
+
 
 class Google_crawl(models.Model):
     request_id = models.AutoField(primary_key=True)

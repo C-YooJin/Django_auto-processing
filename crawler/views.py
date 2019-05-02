@@ -11,6 +11,12 @@ from .instagram_run import run_image_only, run_meta
 import subprocess
 import os
 
+# 다국어 추가한부분 (모듈)
+from django.utils import translation
+from django.http import HttpResponse, JsonResponse
+from django.utils.translation import ugettext as _
+
+
 class RequestCreateView(SuccessMessageMixin, CreateView):
     model = Google_crawl
     form_class = GoogleForm
@@ -162,3 +168,23 @@ class instagramcreateview(SuccessMessageMixin, CreateView):
         )
         return super(instagramcreateview, self).form_valid(form)
 
+
+
+# 다국어 추가한 부분 (코드)
+def transLangEN(request):
+    if translation.LANGUAGE_SESSION_KEY in request.session:
+        del request.session[translation.LANGUAGE_SESSION_KEY]
+
+    userLanguage = 'en'
+    translation.activate(userLanguage)
+    request.session[translation.LANGUAGE_SESSION_KEY] = userLanguage
+    return JsonResponse({'return':'success'})
+
+def transLangKO(request):
+    if translation.LANGUAGE_SESSION_KEY in request.session:
+        del request.session[translation.LANGUAGE_SESSION_KEY]
+
+    userLanguage = 'ko'
+    translation.activate(userLanguage)
+    request.session[translation.LANGUAGE_SESSION_KEY] = userLanguage
+    return JsonResponse({'return':'success'})

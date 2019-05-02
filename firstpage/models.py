@@ -1,13 +1,8 @@
-from django.db import models
-
 # Create your models here.
-
-"""
-임시로 blog/models.py에서 그대로 복붙한 것임. 나중에 다시 수정 예정.
-
-"""
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
+
 
 
 class firstpage(models.Model):
@@ -23,3 +18,12 @@ class firstpage(models.Model):
 
     def __str__(self):
         return self.title
+
+# 다국어
+class Post(models.Model):
+    STATUS_CHOICES = (
+        ('draft', _('Draft')),
+        ('published', _('Published')),
+    )
+
+    title = models.CharField(_('Title'), max_length=250)
