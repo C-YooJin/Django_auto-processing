@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import webdoc
+from .views import WebdocCreateView
+from . import views
 
 urlpatterns = [
-    path('crawlrequest/', webdoc(), name='crawlrequest'),
+    path('', WebdocCreateView.as_view(), name='webdoc'),
 ]

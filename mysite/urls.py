@@ -30,4 +30,5 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
     path('crawler/', include('crawler.urls')),
+    path('webdoc/', include('webdoc.urls')),
 ]

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blog',
     'firstpage',
     'crawler',
+    'webdoc',
     'crispy_forms',
     'background_task',
 ]
