@@ -22,7 +22,7 @@
 									<a href="{% url 'first_page' %}" class="logo"><strong>Editorial</strong> by Data & Connection</a>
 								</header>
 							<!-- Content -->
-<section>
+						<section>
 	    					{% if messages %}
         						{% for message in messages %}
             						<p class="alert alert-dismissable {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
@@ -48,8 +48,11 @@
 															<div class="col-12">
 																{{ form.team_name|as_crispy_field }}
 															</div>
-															<<div class="col-12">
+															<div class="col-12">
 																{{ form.domain_for_data|as_crispy_field }}
+															</div>
+															<div class="col-12">
+																{{ form.date_data_was_created|as_crispy_field }}
 															</div>
 															<div class="col-12">
 																{{ form.crawl_information|as_crispy_field }}
@@ -70,7 +73,11 @@
 											<div class="col-6 col-12-medium">
 											</div>
 										</div>
-    <div id="sidebar">
+						</section>
+						</div>
+					</div>
+ <!-- Sidebar -->
+					<div id="sidebar">
 						<div class="inner">
 
 							<!-- Search -->

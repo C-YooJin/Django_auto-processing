@@ -1,6 +1,6 @@
 from icrawler.builtin import GoogleImageCrawler
 from background_task import background
-from .filter_images import filter
+#from .filter_images import filter
 import os
 import base64
 
@@ -74,19 +74,20 @@ def google_crawler_real(save, keyword, num, save_dir):      # save, keyword, max
     # 이미지 중복 제거 (fdupes (md5sum))
     os.system('fdupes -d -N -r /Users/user/Downloads/Google_crawling/unfiltered/'+save_dir)
 
+    print("Crawling is complete!")
+
     # 만약에 keyword가 json파일 value값으로 있으면 돌려야됨. 안 그러면 오류남.
     # dir 수정
 
     # keyword_fix = keyword.replace(' ', '_')
-
+"""
     try:
         filter(keyword, save_dir)
     except KeyError:
         print('your keyword is not in imagenet class index!')
         f = open('/Users/user/Downloads/Google_crawling/filtered/'+save_dir+'/imagenet class에 없는 키워드라 필터링이 불가합니다.txt', 'w')
         f.close
-
-    print("Crawling is complete!")
+"""
 
 # directory 파일 개수 확인 후 num과 비교해서 NUm보다 작으면 while loop.
 
